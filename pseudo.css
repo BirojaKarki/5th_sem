@@ -1,0 +1,39 @@
+body{
+    margin:20px;
+}
+
+section{
+    display:flex;
+}
+p{
+    text-align: center;
+    transition:all 0.5s linear;
+}
+.firstelement{
+    border-radius: 15px;
+    padding:10px;
+    background-color: blue;
+    color:white;
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+    transition: all 0.5s linear;
+    height:150px;
+    width:150px;
+    cursor: pointer;
+    margin:10px;
+
+}
+.firstelement:first-child{
+    background-color: brown;
+}
+.firstelement:last-child{
+    background-color: black;
+}
+.firstelement:nth-child(3){
+    background-color: lightpink;
+}
+.firstelement:hover{
+    background-color: red;
+    scale:1.2;
+}
