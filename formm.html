@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myform</title>
+    <script src="jqueryMin.js"></script>
+</head>
+<body>
+ <form>
+    <div>
+        <label>email</label>
+        <input type="text" placeholder="email" id="email">
+    </div>
+    <div>
+        <label>password</label>
+   <input type="password" placeholder="******" id="password">
+
+    </div>
+    <button type="submit" value="Submit">Submit</button>
+
+ </form>
+ <script>
+    $(document).ready(function(){
+        $('button').click(function(event){
+             event.preventDefault()
+            alert(`form.submitted`);
+           var email= $('#email').val();
+           var password=$('#password').val();
+           alert(`Email:${email},Password:${password}`)
+
+        });
+        
+    });
+ </script>
+</body>
+</html>

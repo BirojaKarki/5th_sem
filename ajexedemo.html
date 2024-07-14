@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>the content below is from XMLHTTPRequest</p>
+    <div id="content">
+        <!--Dynamic content-->
+
+    </div>
+    <button onclick="loadDoc()">Change Content</button>
+    <p>the content abovee is from XMLHTTPRequest</p>
+</body>
+<script>
+    function loadDoc(){
+        var content=document.getElementById('content').innerHTML;
+        if(content !=''){
+            document.getElementById('content').innerHTML='';
+            return;
+        }
+        var xttp=new XMLHttpRequest();
+        xttp.onreadystatechange=function(){
+            
+            if (this.readyState==4 && this.status==200){
+                document.getElementById('content').innerHTML=this.responseText;
+            }
+        };
+
+        xttp.open("GET","http_info.txt",true);
+        xttp.send();
+    }
+</script>
+</html>
